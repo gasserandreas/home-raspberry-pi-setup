@@ -13,4 +13,12 @@ Airflow Docker environment for Raspberry PI.
 
 ## How to start
 
-1. start local environment with docker: `docker-compose up -d`
+1. start local environment with docker: `docker compose up -d`
+
+## How to start after update
+
+1. run: `docker-compose up --build -d`
+
+## Troubleshoot
+
+How to check logs of Docker service: `docker compose logs {service-name}`
