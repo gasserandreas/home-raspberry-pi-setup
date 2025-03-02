@@ -1,0 +1,8 @@
+.env
+
+# data folder populated by different git repo
+data/
+
+# airflow generated files
+logs/
+dags/__pycache__/
