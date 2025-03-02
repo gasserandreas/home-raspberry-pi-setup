@@ -1,0 +1,24 @@
+# Docker Installation
+
+## Install Docker
+Install Docker on Raspberry PI over SSH
+
+1. connect to host
+2. update `apt-get` first: `sudo apt-get update`
+3. install base packages required for installation:
+```sudo apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+```
+4. add Docker’s official GPG key: `curl -fsSL https://download.docker.com/linux/raspbian/gpg | sudo apt-key add -`
+5. Set up the stable repository: `echo "deb [arch=armhf] https://download.docker.com/linux/raspbian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list`
+6. update apt-get again: `sudo apt-get update`
+7. install Docker: `sudo apt-get install -y docker-ce`
+8. verify Docker installation: `sudo docker --version`
+9. add your user to the Docker group to run Docker commands without sudo: `sudo usermod -aG docker $USER`
+
+## Add Docker to autostart list
+
+Command: `sudo systemctl enable docker`
