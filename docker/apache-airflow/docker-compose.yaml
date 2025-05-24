@@ -114,6 +114,7 @@ services:
       POSTGRES_DB: ${DATA_POSTGRES_DB}
     volumes:
       - airflow-data-db-volume:/var/lib/postgresql/data
+      - ./init-scripts-data-db:/docker-entrypoint-initdb.d
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "${DATA_POSTGRES_USER}"]
       interval: 10s
